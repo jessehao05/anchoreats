@@ -4,18 +4,32 @@ import { api } from "../lib/axios";
 import toast from "react-hot-toast";
 import Map from "../components/Map";
 import Menu from "../components/Menu";
+import { data } from "react-router";
 
 const ToNMapPage = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [restData, setRestData] = useState([]);
+  const [restData, setRestData] = useState({});
+  const [filteredRestData, setFilteredRestData] = useState([]);
+  const [location, setLocation] = useState({lat: 0, lng: 0});
+  
   const [isRateLimited, setIsRateLimited] = useState(false);
 
   useEffect(() => {
     const fetchRestData = async () => {
       try {
+        const userLocation = await getLocation();
+        setLocation(userLocation);
+        console.log(`current location: ${userLocation.lat}, ${userLocation.lng}`)
+
         const res = await api.get("/data");
+
         console.log('the response data is: ', res.data)
-        setRestData(res.data);
+        // console.log(typeof(res))
+        // console.log(typeof(res.data))
+
+        const dataWithDistance = addDistance(res.data, userLocation);
+        console.log('final update for the data: ', dataWithDistance);
+        setRestData(dataWithDistance);
 
       } catch (error) {
         console.log(error);
@@ -30,9 +44,72 @@ const ToNMapPage = () => {
       }
     }
 
+    const getLocation = async () => {
+      return new Promise((resolve, reject) => {
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              const locationData = {lat: position.coords.latitude, lng: position.coords.longitude};
+              console.log(position.coords.latitude, position.coords.longitude)
+              resolve(locationData);
+              // set location loading to false
+            },
+            (error) => reject(error)
+          );
+        } else {
+          reject(new Error("Geolocation not supported by browser."));
+        }
+      })
+
+    }
+
+    const addDistance = (oldData, userLocation) => {
+      console.log('old distance data: ', oldData);
+      
+      const curLat = userLocation.lat;
+      const curLong = userLocation.lng;
+      console.log(curLat, curLat)
+      
+      const newData = oldData.map((rest) => {
+        // console.log(rest.location.lat, rest.location.lng)
+        return {
+          ...rest,
+          distance: calculateHaversineDistance(curLat, curLong, rest.location.lat, rest.location.lng)
+        }
+      });
+
+      console.log('new distance data: ', newData);
+      return newData;
+
+    }
+
+    const calculateHaversineDistance = (lat1, lng1, lat2, lng2) => {
+      const toRadians = (degrees) => degrees * (Math.PI / 180);
+
+      const R = 3958.8;
+      const dLat = toRadians(lat2 - lat1);
+      const dLon = toRadians(lng2 - lng1);
+      const a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) *
+          Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      const distance = R * c; 
+      return distance;
+  }
 
     fetchRestData();
   }, []);
+
+    const handleSearch = (query) => {
+      
+      const searchMatches = restData.filter(restaurant => {
+        const regex = new RegExp(query, 'gi');
+        return restaurant.name.match(regex) || restaurant.description.match(regex)
+      })
+
+      setFilteredRestData(searchMatches);
+    }
 
   return (
     <div className="min-h-screen">
@@ -49,7 +126,7 @@ const ToNMapPage = () => {
                 <Map params={restData}/>
               </div>
               <div className="">
-                <Menu />
+                <Menu displayedData={filteredRestData} onSearch={handleSearch}/>
               </div>
             </div>
           )}
