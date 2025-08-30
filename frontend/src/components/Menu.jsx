@@ -25,8 +25,6 @@ const Menu = ({ onSearch, displayedData }) => {
 
 
         <FindClosestBtn />
-
-        
     </div>
   )
 }

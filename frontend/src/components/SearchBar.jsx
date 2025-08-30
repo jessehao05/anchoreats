@@ -14,7 +14,7 @@ const SearchBar = ({ onSearch }) => {
 
 
   return (
-    <div>
+    <div className="mb-2">
         <label className="input input-bordered flex items-center gap-2">
             <input type="text" className="grow" placeholder="Search..." onChange={handleChange}/>
             <svg

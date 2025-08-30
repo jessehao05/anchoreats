@@ -10,7 +10,7 @@ const FindClosestBtn = () => {
 
 
   return (
-    <div className="btn btn-secondary" onClick={buttonAction}>
+    <div className="btn btn-secondary mt-5" onClick={buttonAction}>
         Find Closest
     </div>
   )

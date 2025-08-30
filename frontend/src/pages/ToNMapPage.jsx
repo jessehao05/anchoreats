@@ -11,7 +11,6 @@ const ToNMapPage = () => {
   const [restData, setRestData] = useState({});
   const [filteredRestData, setFilteredRestData] = useState([]);
   const [location, setLocation] = useState({lat: 0, lng: 0});
-  
   const [isRateLimited, setIsRateLimited] = useState(false);
 
   useEffect(() => {
@@ -74,7 +73,7 @@ const ToNMapPage = () => {
         // console.log(rest.location.lat, rest.location.lng)
         return {
           ...rest,
-          distance: calculateHaversineDistance(curLat, curLong, rest.location.lat, rest.location.lng)
+          distance: calculateHaversineDistance(curLat, curLong, rest.location.lat, rest.location.lng).toFixed(2)
         }
       });
 
@@ -123,7 +122,7 @@ const ToNMapPage = () => {
           {restData.length > 0 && (
             <div className="p-20 flex gap-12">
               <div className="h-[500px] w-2/3">
-                <Map params={restData}/>
+                <Map restaurants={restData} location={location}/>
               </div>
               <div className="">
                 <Menu displayedData={filteredRestData} onSearch={handleSearch}/>

@@ -1,15 +1,16 @@
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
 import { useState } from 'react';
 
 
-const Map = ( params ) => {
-  const [data, setData] = useState(params);
+const Map = ( {restaurants, location} ) => {
+  const [data, setData] = useState(restaurants);
   const [currentLocation, setCurrentLocation] = useState();
 
   // console.log(data)
   // console.log(data.param)
   // console.log(data.param[0].location.lat, data.param[0].location.lng)
+  console.log(restaurants)
 
 
   return (
@@ -22,7 +23,7 @@ const Map = ( params ) => {
             />
 
           
-            {data.params.map((rest, index) => {
+            {restaurants.map((rest, index) => {
 
                 // console.log('marker:', rest.location.lat, rest.location.lng);
 
@@ -35,11 +36,13 @@ const Map = ( params ) => {
                 );
             })}
 
-            <Marker position={[36.14404496955764, -86.80270977072728]}>
-                <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup>
-            </Marker>
+            <CircleMarker
+              center={[location.lat, location.lng]}
+              radius={6}
+              pathOptions={{ fillColor: 'blue', color: 'blue', weight: 1, fillOpacity: 0.5 }}
+            >
+              <Popup>Current location!</Popup>
+            </CircleMarker>
         </MapContainer>
 
     </div>
