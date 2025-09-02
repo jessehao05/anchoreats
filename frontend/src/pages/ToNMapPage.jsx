@@ -74,7 +74,7 @@ const ToNMapPage = () => {
         // console.log(rest.location.lat, rest.location.lng)
         return {
           ...rest,
-          distance: calculateHaversineDistance(curLat, curLong, rest.location.lat, rest.location.lng).toFixed(2),
+          distance: Math.round(calculateHaversineDistance(curLat, curLong, rest.location.lat, rest.location.lng) * 100) / 100,
           open: determineIfOpen(rest.hours)
         }
       });
@@ -143,6 +143,15 @@ const ToNMapPage = () => {
       setSelected(wanted._id);
     }
 
+    const calculateClosest = () => {
+      const closestFive = [...restData]
+        .sort((a, b) => a.distance - b.distance)
+        .slice(0, 5)
+      console.log(closestFive)
+      console.log(typeof(closestFive[0].distance))
+      setFilteredRestData(closestFive);
+    }
+
   return (
     <div className="min-h-screen">
         <Navbar/>
@@ -158,7 +167,7 @@ const ToNMapPage = () => {
                 <Map restaurants={restData} location={location} selected={selected}/>
               </div>
               <div className="">
-                <Menu handleClick={handleBarClick} onSearch={handleSearch} displayedData={filteredRestData}/>
+                <Menu handleClick={handleBarClick} handleClosest={calculateClosest} onSearch={handleSearch} displayedData={filteredRestData} />
               </div>
             </div>
           )}

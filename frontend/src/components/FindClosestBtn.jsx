@@ -1,10 +1,11 @@
 
 import toast from 'react-hot-toast'
 
-const FindClosestBtn = () => {
+const FindClosestBtn = ({ handleClosest }) => {
 
     const buttonAction = () => {
-        toast.success('button pressed!')
+        // toast.success('button pressed!')
+      handleClosest();
     }
 
 

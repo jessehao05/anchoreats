@@ -6,7 +6,7 @@ import * as L from "leaflet";
 
 const Map = ( {restaurants, location, selected = ""} ) => {
   const [data, setData] = useState(restaurants);
-  const [currentLocation, setCurrentLocation] = useState();
+  const [currentLocation, setCurrentLocation] = useState(location);
 
   // console.log(data)
   // console.log(data.param)
@@ -53,13 +53,17 @@ const Map = ( {restaurants, location, selected = ""} ) => {
           
             {restaurants.map((rest, index) => {
                 // console.log('marker:', rest.location.lat, rest.location.lng);
+                let highlighted = selected === rest._id;
                 return (
                   <Marker 
                     key={index} 
                     position={[rest.location.lat, rest.location.lng]} 
                     // opacity={selected === rest._id ? 1.0 : 0.5}
-                    zIndexOffset={selected === rest._id ? 1000 : 0}
-                    icon={createIcon(selected === rest._id)}
+                    zIndexOffset={highlighted ? 1000 : 0}
+                    icon={createIcon(highlighted)}
+                    eventHandlers={{
+                      click: () => { highlighted = !highlighted }
+                    }}
                   >
                     <Popup>
                       {rest.name}

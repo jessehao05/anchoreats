@@ -3,8 +3,9 @@ import RestaurantBar from "./RestaurantBar"
 import SearchBar from "./SearchBar"
 import { useState } from "react"
 
-const Menu = ({ onSearch, displayedData, handleClick }) => {
+const Menu = ({ onSearch, displayedData, handleClick, handleClosest }) => {
   const [searching, setSearching] = useState(true);
+  const [data, setData] = useState(displayedData);
   console.log(displayedData) 
 
   return (
@@ -17,7 +18,7 @@ const Menu = ({ onSearch, displayedData, handleClick }) => {
           )
         })}
 
-        <FindClosestBtn />
+        <FindClosestBtn handleClosest={handleClosest}/>
     </div>
   )
 }
