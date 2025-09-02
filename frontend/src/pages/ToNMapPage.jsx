@@ -164,7 +164,7 @@ const ToNMapPage = () => {
           {restData.length > 0 && (
             <div className="p-20 flex gap-12 flex-wrap">
               <div className="h-[500px] w-2/3">
-                <Map restaurants={restData} location={location} selected={selected}/>
+                <Map restaurants={restData} location={location} selected={selected} handleRestClick={handleBarClick}/>
               </div>
               <div className="">
                 <Menu handleClick={handleBarClick} handleClosest={calculateClosest} onSearch={handleSearch} displayedData={filteredRestData} />

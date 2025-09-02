@@ -4,9 +4,13 @@ import { useState } from 'react';
 import * as L from "leaflet";
 
 
-const Map = ( {restaurants, location, selected = ""} ) => {
+const Map = ( {restaurants, location, selected = "", handleRestClick} ) => {
   const [data, setData] = useState(restaurants);
   const [currentLocation, setCurrentLocation] = useState(location);
+
+  const onRestClick = (query) => {
+    handleRestClick(query);
+  }
 
   // console.log(data)
   // console.log(data.param)
@@ -53,16 +57,18 @@ const Map = ( {restaurants, location, selected = ""} ) => {
           
             {restaurants.map((rest, index) => {
                 // console.log('marker:', rest.location.lat, rest.location.lng);
-                let highlighted = selected === rest._id;
                 return (
                   <Marker 
                     key={index} 
                     position={[rest.location.lat, rest.location.lng]} 
                     // opacity={selected === rest._id ? 1.0 : 0.5}
-                    zIndexOffset={highlighted ? 1000 : 0}
-                    icon={createIcon(highlighted)}
+                    zIndexOffset={selected === rest._id ? 1000 : 0}
+                    icon={createIcon(selected === rest._id)}
                     eventHandlers={{
-                      click: () => { highlighted = !highlighted }
+                      click: () => { 
+                        console.log(`clicked : ${rest.name}`)
+                        onRestClick(rest.name);
+                       }
                     }}
                   >
                     <Popup>
