@@ -1,16 +1,44 @@
 import { MapContainer, TileLayer, Marker, Popup, CircleMarker } from 'react-leaflet'
 import "leaflet/dist/leaflet.css";
 import { useState } from 'react';
+import * as L from "leaflet";
 
 
-const Map = ( {restaurants, location} ) => {
+const Map = ( {restaurants, location, selected = ""} ) => {
   const [data, setData] = useState(restaurants);
   const [currentLocation, setCurrentLocation] = useState();
 
   // console.log(data)
   // console.log(data.param)
   // console.log(data.param[0].location.lat, data.param[0].location.lng)
-  console.log(restaurants)
+  // console.log(restaurants)
+
+  const createIcon = (isSelected) => {   
+    const scale = isSelected ? 1.1 : 1;
+    const size = [25 * scale, 41 * scale];
+    const anchor = [12 * scale, 20 * scale];
+
+    const iconUrl = isSelected 
+      ? 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png'
+      : 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png';
+    
+    const iconRetinaUrl = isSelected
+      ? 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png'
+      : 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png';
+    
+
+    return L.icon({
+      iconUrl: iconUrl,
+      iconRetinaUrl: iconRetinaUrl,
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
+      iconSize: size,      
+      iconAnchor: anchor,      
+      popupAnchor: [0, -17 * scale],         
+      tooltipAnchor: [16 * scale, -28 * scale],
+      shadowSize: [41 * scale, 41 * scale],
+      shadowAnchor: [12 * scale, 41 * scale]              
+    });
+  };
 
 
   return (
@@ -24,11 +52,15 @@ const Map = ( {restaurants, location} ) => {
 
           
             {restaurants.map((rest, index) => {
-
                 // console.log('marker:', rest.location.lat, rest.location.lng);
-
                 return (
-                  <Marker key={index} position={[rest.location.lat, rest.location.lng]}>
+                  <Marker 
+                    key={index} 
+                    position={[rest.location.lat, rest.location.lng]} 
+                    // opacity={selected === rest._id ? 1.0 : 0.5}
+                    zIndexOffset={selected === rest._id ? 1000 : 0}
+                    icon={createIcon(selected === rest._id)}
+                  >
                     <Popup>
                       {rest.name}
                     </Popup>

@@ -11,6 +11,7 @@ const ToNMapPage = () => {
   const [restData, setRestData] = useState({});
   const [filteredRestData, setFilteredRestData] = useState([]);
   const [location, setLocation] = useState({lat: 0, lng: 0});
+  const [selected, setSelected] = useState([]);
   const [isRateLimited, setIsRateLimited] = useState(false);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ const ToNMapPage = () => {
         // console.log(typeof(res))
         // console.log(typeof(res.data))
 
-        const dataWithDistance = addDistance(res.data, userLocation);
+        const dataWithDistance = addDistanceAndOpen(res.data, userLocation);
         console.log('final update for the data: ', dataWithDistance);
         setRestData(dataWithDistance);
 
@@ -62,7 +63,7 @@ const ToNMapPage = () => {
 
     }
 
-    const addDistance = (oldData, userLocation) => {
+    const addDistanceAndOpen = (oldData, userLocation) => {
       console.log('old distance data: ', oldData);
       
       const curLat = userLocation.lat;
@@ -73,7 +74,8 @@ const ToNMapPage = () => {
         // console.log(rest.location.lat, rest.location.lng)
         return {
           ...rest,
-          distance: calculateHaversineDistance(curLat, curLong, rest.location.lat, rest.location.lng).toFixed(2)
+          distance: calculateHaversineDistance(curLat, curLong, rest.location.lat, rest.location.lng).toFixed(2),
+          open: determineIfOpen(rest.hours)
         }
       });
 
@@ -95,7 +97,32 @@ const ToNMapPage = () => {
       const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
       const distance = R * c; 
       return distance;
-  }
+    }
+
+    const determineIfOpen = ( hours ) => {
+      const now = new Date();
+      const days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+      const dayKey = days[now.getDay()];
+      const currentTime = now.toTimeString().slice(0, 5);
+
+      const isBetween = (time, start, end) => {
+        if (start < end) {
+          return time >= start && time < end;
+        } else {
+          // overnight case
+          return time >= start || time < end;
+        }
+      }
+
+      // checking all intervals
+      const todaysHours = hours[dayKey] || [];
+      for (const interval of todaysHours) {
+        if (isBetween(currentTime, interval.open, interval.close)) {
+          return true;
+        }
+      }
+      return false;
+    }
 
     fetchRestData();
   }, []);
@@ -110,6 +137,12 @@ const ToNMapPage = () => {
       setFilteredRestData(searchMatches);
     }
 
+    const handleBarClick = (clicked) => {
+      console.log("from the ToN page: ", clicked); // works as expected
+      const wanted = restData.find(rest => rest.name === clicked);
+      setSelected(wanted._id);
+    }
+
   return (
     <div className="min-h-screen">
         <Navbar/>
@@ -120,12 +153,12 @@ const ToNMapPage = () => {
           {isLoading && <div className="text-center text-primary-content py-10">Loading restaurant data...</div>}
 
           {restData.length > 0 && (
-            <div className="p-20 flex gap-12">
+            <div className="p-20 flex gap-12 flex-wrap">
               <div className="h-[500px] w-2/3">
-                <Map restaurants={restData} location={location}/>
+                <Map restaurants={restData} location={location} selected={selected}/>
               </div>
               <div className="">
-                <Menu displayedData={filteredRestData} onSearch={handleSearch}/>
+                <Menu handleClick={handleBarClick} onSearch={handleSearch} displayedData={filteredRestData}/>
               </div>
             </div>
           )}
