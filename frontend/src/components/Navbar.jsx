@@ -9,9 +9,6 @@ const Navbar = () => {
             <Link to="/swipes" className="text-black hover:text-gray-600">
                 Meal Swipes Calculator
             </Link>
-            <Link to="/money" className="text-black hover:text-gray-600">
-                Meal Money Calculator
-            </Link>
             <Link to="/map" className="text-black hover:text-gray-600">
                 Taste of Nashville Map
             </Link>

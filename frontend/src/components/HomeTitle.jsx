@@ -9,9 +9,8 @@ const HomeTitle = () => {
                 <p className="text-xl">Helpful features for Vanderbilt dining</p>
             </div>
 
-            <div className="flex gap-5 flex-wrap">
+            <div className="flex flex-wrap justify-center items-center gap-4">
                 <HomeButton text="Meal Swipes Calculator" destination="/swipes" />
-                <HomeButton text="Meal Money Calculator" destination="/money" />
                 <HomeButton text="Taste of Nashville Map" destination="/map" />
             </div>
             
