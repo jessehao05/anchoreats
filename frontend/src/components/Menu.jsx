@@ -14,7 +14,7 @@ const Menu = ({ onSearch, displayedData, handleClick, handleClosest }) => {
 
         {searching && displayedData.map((rest, idx) => {
           return (
-            <RestaurantBar key={idx} title={rest.name} description={rest.description} distance={rest.distance} handleClick={handleClick}/>
+            <RestaurantBar key={idx} title={rest.name} description={rest.description} distance={rest.distance} status={rest.open} handleClick={handleClick}/>
           )
         })}
 
