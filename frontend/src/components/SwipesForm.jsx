@@ -70,8 +70,12 @@ const SwipesForm = () => {
         const lastDay = parseInt(endDateArray[2]);
 
         let days = calculateDays(firstMonth, lastMonth, firstDay, lastDay, year);
-        days = removeBreakDays(fallBreak, thanksgiving, springBreak);
+        console.log('days initial', days)
+        days = removeBreakDays(fallBreak, thanksgiving, springBreak, days);
+        console.log('days after breaks', days)
         meals = removeFarmers(meals, farmerSwipes);
+        console.log('days final', days)
+        console.log('meals: ', meals)
 
         setFinalDays(days);
         setFinalMeals(meals);
@@ -94,8 +98,7 @@ const SwipesForm = () => {
 
 
     return (
-        <div className="flex justify-center items-center gap-24">
-            {submitted && <SwipesResults meals={swipes} days={20}/>}
+        <div className="flex flex-wrap justify-center items-center gap-24">
 
             <form action="" className="flex flex-col gap-4 mt-10" onSubmit={(e) => handleSubmit(e)}>
                 
@@ -184,6 +187,8 @@ const SwipesForm = () => {
                 </div>
                
             </form>
+
+            {submitted && <SwipesResults meals={finalMeals} days={finalDays}/>}
             
         </div>
   )

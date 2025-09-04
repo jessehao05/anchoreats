@@ -9,7 +9,7 @@ const Menu = ({ onSearch, displayedData, handleClick, handleClosest }) => {
   console.log(displayedData) 
 
   return (
-    <div className="h-[500px] w-72 border-2 border-black p-4 overflow-auto flex flex-col gap-1">
+    <div className="h-[600px] w-72 border-2 border-black p-4 overflow-auto flex flex-col gap-1">
         {searching && <SearchBar onSearch={onSearch}/>}
 
         {searching && displayedData.map((rest, idx) => {
