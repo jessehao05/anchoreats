@@ -30,4 +30,7 @@ Figma: [Link](https://www.figma.com/design/b6XmvN3zJ3Ygg13yXWLZWu/web-map?node-i
 #### To-Do
 
 - possibly add more information on marker popups
-- possibly add about page -->
+- possibly add about page
+- code formatting, comments for readability
+- deploy
+- update node? -->
