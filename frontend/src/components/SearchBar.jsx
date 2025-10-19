@@ -12,7 +12,7 @@ const SearchBar = ({ onSearch }) => {
   }
 
   return (
-    <div className="mb-2">
+    <div className="">
         <label className="input input-bordered flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
