@@ -48,7 +48,7 @@ const Map = ( {restaurants, location, selected = "", handleRestClick} ) => {
   return (
     <div className="h-full">
 
-        <MapContainer className="h-full" center={[36.144523, -86.802633]} zoom={14} scrollWheelZoom={false}>
+        <MapContainer className="h-full z-0" center={[36.144523, -86.802633]} zoom={14} scrollWheelZoom={false}>
             <TileLayer
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

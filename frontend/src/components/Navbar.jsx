@@ -14,6 +14,9 @@ const Navbar = () => {
             <Link to="/swipes" className="text-black hover:text-gray-600">
                 Meal Swipes Calculator
             </Link>
+            <Link to="/dining" className="text-black hover:text-gray-600">
+                Dining Times
+            </Link>
             <Link to="/map" className="text-black hover:text-gray-600">
                 Taste of Nashville Map
             </Link>
@@ -29,6 +32,10 @@ const Navbar = () => {
           <Link to="/swipes" className="px-4 py-2 text-black hover:bg-gray-100"
             onClick={() => setIsOpen(false)}>
             Meal Swipes Calculator
+          </Link>
+          <Link to="/dining" className="px-4 py-2 text-black hover:bg-gray-100"
+            onClick={() => setIsOpen(false)}>
+            Dining Times
           </Link>
           <Link to="/map" className="px-4 py-2 text-black hover:bg-gray-100"
             onClick={() => setIsOpen(false)}>
