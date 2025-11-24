@@ -1,0 +1,492 @@
+[
+    { "name": "Barista Parlor", 
+        "description": "Coffee shop", 
+        "website": "https://baristaparlor.com/",
+        "location": { "lat": 36.135830, "lng": -86.801090 },
+        "hours": { 
+            "mon": [{ "open": "07:00", "close": "16:00" }],
+            "tue": [{ "open": "07:00", "close": "16:00" }],
+            "wed": [{ "open": "07:00", "close": "16:00" }],
+            "thu": [{ "open": "07:00", "close": "16:00" }],
+            "fri": [{ "open": "07:00", "close": "16:00" }],
+            "sat": [{ "open": "08:00", "close": "16:00" }],
+            "sun": [{ "open": "08:00", "close": "16:00" }]
+        }
+    },
+    { "name": "Biscuit Love", 
+        "description": "Southern breakfast", 
+        "website": "https://www.biscuitlove.com/",
+        "location": { "lat": 36.136761, "lng": -86.799724 },
+        "hours": { 
+            "mon": [{ "open": "07:00", "close": "15:00" }],
+            "tue": [{ "open": "07:00", "close": "15:00" }],
+            "wed": [{ "open": "07:00", "close": "15:00" }],
+            "thu": [{ "open": "07:00", "close": "15:00" }],
+            "fri": [{ "open": "07:00", "close": "15:00" }],
+            "sat": [{ "open": "07:00", "close": "15:00" }],
+            "sun": [{ "open": "07:00", "close": "15:00" }]
+        }
+    },
+    { "name": "Grain & Berry", 
+        "description": "Açaí shop", 
+        "website": "https://grainandberry.com/",
+        "location": { "lat": 36.136358, "lng": -86.799432 },
+        "hours": { 
+            "mon": [{ "open": "07:00", "close": "21:00" }],
+            "tue": [{ "open": "07:00", "close": "21:00" }],
+            "wed": [{ "open": "07:00", "close": "21:00" }],
+            "thu": [{ "open": "07:00", "close": "21:00" }],
+            "fri": [{ "open": "07:00", "close": "21:00" }],
+            "sat": [{ "open": "07:00", "close": "21:00" }],
+            "sun": [{ "open": "07:00", "close": "21:00" }]
+        }
+    },
+    { "name": "Sushi & Pho 88", 
+        "description": "Casual Japanese eatery", 
+        "website": "https://www.sushipho88.com/",
+        "location": { "lat": 36.136767, "lng": -86.802548 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "15:00" }, { "open": "16:00", "close": "21:30" }],
+            "tue": [{ "open": "11:00", "close": "15:00" }, { "open": "16:00", "close": "21:30" }],
+            "wed": [{ "open": "11:00", "close": "15:00" }, { "open": "16:00", "close": "21:30" }],
+            "thu": [{ "open": "11:00", "close": "15:00" }, { "open": "16:00", "close": "21:30" }],
+            "fri": [{ "open": "11:00", "close": "15:00" }, { "open": "16:00", "close": "22:00" }],
+            "sat": [{ "open": "11:30", "close": "22:00" }],
+            "sun": [{ "open": "11:30", "close": "20:00" }]
+        }
+    },
+    { "name": "The Grilled Cheeserie", 
+        "description": "Grilled cheese & milkshakes", 
+        "website": "https://www.grilledcheeserie.com/",
+        "location": { "lat": 36.136773, "lng": -86.799837 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "21:00" }],
+            "tue": [{ "open": "11:00", "close": "21:00" }],
+            "wed": [{ "open": "11:00", "close": "21:00" }],
+            "thu": [{ "open": "11:00", "close": "21:00" }],
+            "fri": [{ "open": "11:00", "close": "21:00" }],
+            "sat": [{ "open": "11:00", "close": "21:00" }],
+            "sun": [{ "open": "11:00", "close": "21:00" }]
+        }
+    },
+    { "name": "Hopdoddy Burger Bar", 
+        "description": "Hamburger restaurant", 
+        "website": "https://www.hopdoddy.com/",
+        "location": { "lat": 36.136316, "lng": -86.801037 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "21:30" }],
+            "tue": [{ "open": "11:00", "close": "21:30" }],
+            "wed": [{ "open": "11:00", "close": "21:30" }],
+            "thu": [{ "open": "11:00", "close": "21:30" }],
+            "fri": [{ "open": "11:00", "close": "22:30" }],
+            "sat": [{ "open": "11:00", "close": "22:30" }],
+            "sun": [{ "open": "11:00", "close": "21:30" }]
+        }
+    },
+    { "name": "Jeni's Splendid Ice Creams", 
+        "description": "Ice cream shop", 
+        "website": "https://jenis.com/",
+        "location": { "lat": 36.135736, "lng": -86.801101 },
+        "hours": { 
+            "mon": [{ "open": "12:00", "close": "23:59" }],
+            "tue": [{ "open": "12:00", "close": "23:59" }],
+            "wed": [{ "open": "12:00", "close": "23:59" }],
+            "thu": [{ "open": "12:00", "close": "23:59" }],
+            "fri": [{ "open": "12:00", "close": "23:59" }],
+            "sat": [{ "open": "12:00", "close": "23:59" }],
+            "sun": [{ "open": "12:00", "close": "23:59" }]
+        }
+    },
+    { "name": "Meet Noodles", 
+        "description": "Chinese noodle restaurant", 
+        "website": "https://www.meetnoodlestn.com/4qn9as97/restaurant/order-online",
+        "location": { "lat": 36.136745, "lng": -86.802706 },
+        "hours": { 
+            "mon": [{ "open": "11:30", "close": "21:30" }],
+            "tue": [{ "open": "11:30", "close": "21:30" }],
+            "wed": [{ "open": "11:30", "close": "21:30" }],
+            "thu": [{ "open": "11:30", "close": "21:30" }],
+            "fri": [{ "open": "11:30", "close": "21:30" }],
+            "sat": [{ "open": "11:30", "close": "21:30" }],
+            "sun": [{ "open": "11:30", "close": "21:30" }]
+        }
+    },
+    { "name": "The Urban Juicer", 
+        "description": "Juices, açaí bowls, wraps", 
+        "website": "https://theurbanjuicer.com/",
+        "location": { "lat": 36.138077, "lng": -86.800604 },
+        "hours": { 
+            "mon": [{ "open": "07:00", "close": "18:00" }],
+            "tue": [{ "open": "07:00", "close": "18:00" }],
+            "wed": [{ "open": "07:00", "close": "18:00" }],
+            "thu": [{ "open": "07:00", "close": "18:00" }],
+            "fri": [{ "open": "07:00", "close": "18:00" }],
+            "sat": [{ "open": "08:00", "close": "18:00" }],
+            "sun": [{ "open": "08:00", "close": "18:00" }]
+        }
+    },
+    { "name": "Taco Mama", 
+        "description": "Mexican restaurant", 
+        "website": "https://tacomamaonline.com/",
+        "location": { "lat": 36.138264, "lng": -86.800563 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "21:00" }],
+            "tue": [{ "open": "11:00", "close": "21:00" }],
+            "wed": [{ "open": "11:00", "close": "21:00" }],
+            "thu": [{ "open": "11:00", "close": "21:00" }],
+            "fri": [{ "open": "11:00", "close": "21:00" }],
+            "sat": [{ "open": "11:00", "close": "21:00" }],
+            "sun": [{ "open": "11:00", "close": "20:00" }]
+        }
+    },
+    { "name": "Ben & Jerry's", 
+        "description": "Ice cream shop", 
+        "website": "https://www.benjerry.com/",
+        "location": { "lat": 36.146118, "lng": -86.799456 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "22:00" }],
+            "tue": [{ "open": "11:00", "close": "22:00" }],
+            "wed": [{ "open": "11:00", "close": "22:00" }],
+            "thu": [{ "open": "11:00", "close": "22:00" }],
+            "fri": [{ "open": "11:00", "close": "22:30" }],
+            "sat": [{ "open": "11:00", "close": "22:30" }],
+            "sun": [{ "open": "11:00", "close": "22:00" }]
+        }
+    },
+    { "name": "Chuy's", 
+        "description": "Tex-Mex restaurant", 
+        "website": "https://www.chuys.com/locations/tn/nashville/nashville-tn/6029",
+        "location": { "lat": 36.150845, "lng": -86.796525 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "22:00" }],
+            "tue": [{ "open": "11:00", "close": "22:00" }],
+            "wed": [{ "open": "11:00", "close": "22:00" }],
+            "thu": [{ "open": "11:00", "close": "22:00" }],
+            "fri": [{ "open": "11:00", "close": "23:00" }],
+            "sat": [{ "open": "11:00", "close": "23:00" }],
+            "sun": [{ "open": "11:00", "close": "22:00" }]
+        }
+    },
+    { "name": "8th and Roast", 
+        "description": "Coffee shop", 
+        "website": "https://www.8thandroast.com/",
+        "location": { "lat": 36.150597, "lng": -86.798568 },
+        "hours": { 
+            "mon": [{ "open": "07:00", "close": "18:00" }],
+            "tue": [{ "open": "07:00", "close": "18:00" }],
+            "wed": [{ "open": "07:00", "close": "18:00" }],
+            "thu": [{ "open": "07:00", "close": "18:00" }],
+            "fri": [{ "open": "07:00", "close": "18:00" }],
+            "sat": [{ "open": "07:00", "close": "18:00" }],
+            "sun": [{ "open": "07:00", "close": "18:00" }]
+        }
+    },
+    { "name": "Helen's Hot Chicken", 
+        "description": "Chicken restaurant", 
+        "website": "https://www.helenshotchicken.com/",
+        "location": { "lat": 36.146046, "lng": -86.798970 },
+        "hours": { 
+            "mon": [{ "open": "10:30", "close": "20:00" }],
+            "tue": [{ "open": "10:30", "close": "20:00" }],
+            "wed": [{ "open": "10:30", "close": "20:00" }],
+            "thu": [{ "open": "10:30", "close": "20:00" }],
+            "fri": [{ "open": "10:30", "close": "20:00" }],
+            "sat": [{ "open": "11:00", "close": "19:00" }],
+            "sun": []
+        }
+    },
+    { "name": "Two Boots Pizza", 
+        "description": "Pizza restaurant", 
+        "website": "https://twoboots.com/",
+        "location": { "lat": 36.149383, "lng": -86.798193 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "21:00" }],
+            "tue": [{ "open": "11:00", "close": "21:00" }],
+            "wed": [{ "open": "11:00", "close": "21:00" }],
+            "thu": [{ "open": "11:00", "close": "21:00" }],
+            "fri": [{ "open": "11:00", "close": "23:59" }],
+            "sat": [{ "open": "12:00", "close": "23:59" }],
+            "sun": [{ "open": "12:00", "close": "21:00" }]
+        }
+    },
+    { "name": "Sarabha's Creamery", 
+        "description": "Ice cream shop", 
+        "website": "https://sarabhascreamery.com/",
+        "location": { "lat": 36.147275, "lng": -86.798912 },
+        "hours": { 
+            "mon": [{ "open": "09:00", "close": "23:00" }],
+            "tue": [{ "open": "09:00", "close": "23:00" }],
+            "wed": [{ "open": "09:00", "close": "23:00" }],
+            "thu": [{ "open": "09:00", "close": "23:00" }],
+            "fri": [{ "open": "09:00", "close": "23:30" }],
+            "sat": [{ "open": "12:00", "close": "23:30" }],
+            "sun": [{ "open": "12:00", "close": "23:00" }]
+        }
+    },
+    { "name": "The Slider House", 
+        "description": "Sliders, salads, and more", 
+        "website": "https://sliderhousensh.com/",
+        "location": { "lat": 36.149927, "lng": -86.796194 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "22:00" }],
+            "tue": [{ "open": "11:00", "close": "22:00" }],
+            "wed": [{ "open": "11:00", "close": "22:00" }],
+            "thu": [{ "open": "11:00", "close": "22:00" }],
+            "fri": [{ "open": "11:00", "close": "22:00" }],
+            "sat": [{ "open": "11:00", "close": "22:00" }],
+            "sun": [{ "open": "11:00", "close": "22:00" }]
+        }
+    },
+    { "name": "Bombay Palace", 
+        "description": "Indian restaurant", 
+        "website": "https://www.nashvillebombaypalace.com/",
+        "location": { "lat": 36.144333, "lng": -86.813648 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "tue": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "wed": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "thu": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "fri": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "sat": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "sun": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }]
+        }
+    },
+    { "name": "Sitar", 
+        "description": "Indian restaurant", 
+        "website": "https://www.sitarindiannashville.com/",
+        "location": { "lat": 36.151128, "lng": -86.801646 },
+        "hours": { 
+            "mon": [{ "open": "10:30", "close": "14:30" }, { "open": "16:30", "close": "22:00" }],
+            "tue": [],
+            "wed": [{ "open": "10:30", "close": "14:30" }, { "open": "16:30", "close": "22:00" }],
+            "thu": [{ "open": "10:30", "close": "14:30" }, { "open": "16:30", "close": "22:00" }],
+            "fri": [{ "open": "10:30", "close": "14:30" }, { "open": "16:30", "close": "22:00" }],
+            "sat": [{ "open": "10:30", "close": "14:30" }, { "open": "16:30", "close": "22:00" }],
+            "sun": [{ "open": "10:30", "close": "15:00" }, { "open": "16:30", "close": "22:00" }]
+        }
+    },
+    { "name": "Wendy's", 
+        "description": "Fast food restaurant", 
+        "website": "https://locations.wendys.com/united-states/tn/nashville/2603-west-end-ave",
+        "location": { "lat": 36.145775, "lng": -86.809858 },
+        "hours": { 
+            "mon": [{ "open": "06:00", "close": "02:00" }],
+            "tue": [{ "open": "06:00", "close": "02:00" }],
+            "wed": [{ "open": "06:00", "close": "02:00" }],
+            "thu": [{ "open": "06:00", "close": "02:00" }],
+            "fri": [{ "open": "06:00", "close": "02:00" }],
+            "sat": [{ "open": "06:00", "close": "02:00" }],
+            "sun": [{ "open": "06:00", "close": "02:00" }]
+        }
+    },
+    { "name": "Hyderabad House", 
+        "description": "Indian restaurant", 
+        "website": "https://hyderabadhousenashville.com/",
+        "location": { "lat": 36.145218, "lng": -86.813593 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "21:30"}],
+            "tue": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "21:30"}],
+            "wed": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "21:30"}],
+            "thu": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "21:30"}],
+            "fri": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "21:30"}],
+            "sat": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "21:30"}],
+            "sun": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "21:30"}]
+        }
+    },
+    { "name": "Sun & Fork", 
+        "description": "Breakfast restaurant", 
+        "website": "https://sunandfork.com/",
+        "location": { "lat": 36.146450, "lng": -86.808738 },
+        "hours": { 
+            "mon": [{ "open": "07:00", "close": "14:30" }],
+            "tue": [{ "open": "07:00", "close": "14:30" }],
+            "wed": [{ "open": "07:00", "close": "14:30" }],
+            "thu": [{ "open": "07:00", "close": "14:30" }],
+            "fri": [{ "open": "07:00", "close": "14:30" }],
+            "sat": [{ "open": "07:00", "close": "14:30" }],
+            "sun": [{ "open": "07:00", "close": "14:30" }]
+        }
+    },
+    { "name": "Inchin's Bamboo Garden", 
+        "description": "Pan-Asian restaurant", 
+        "website": "https://bamboo-gardens.com/",
+        "location": { "lat": 36.153187, "lng": -86.796101 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "tue": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "wed": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "thu": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "fri": [{ "open": "11:00", "close": "14:30" }, { "open": "17:00", "close": "22:00" }],
+            "sat": [{ "open": "12:00", "close": "22:00" }],
+            "sun": [{ "open": "12:00", "close": "22:00" }]
+        }
+    },
+    { "name": "Papa John's Pizza", 
+        "description": "Pizza restaurant", 
+        "website": "https://www.papajohns.com/",
+        "location": { "lat": 36.148229, "lng": -86.805916 },
+        "hours": { 
+            "mon": [{ "open": "10:00", "close": "23:59" }],
+            "tue": [{ "open": "10:00", "close": "23:59" }],
+            "wed": [{ "open": "10:00", "close": "23:59" }],
+            "thu": [{ "open": "10:00", "close": "23:59" }],
+            "fri": [{ "open": "10:00", "close": "01:00" }],
+            "sat": [{ "open": "10:00", "close": "01:00" }],
+            "sun": [{ "open": "10:00", "close": "23:59" }]
+        }
+    },
+    { "name": "Elliston Place Soda Shop", 
+        "description": "American restaurant", 
+        "website": "https://www.ellistonplacesodashop.com/",
+        "location": { "lat": 36.151890, "lng": -86.803397 },
+        "hours": { 
+            "mon": [{ "open": "07:30", "close": "16:00" }],
+            "tue": [{ "open": "07:30", "close": "16:00" }],
+            "wed": [{ "open": "07:30", "close": "16:00" }],
+            "thu": [{ "open": "07:30", "close": "16:00" }],
+            "fri": [{ "open": "07:30", "close": "16:00" }],
+            "sat": [{ "open": "07:30", "close": "16:00" }],
+            "sun": [{ "open": "09:00", "close": "15:00" }]
+        }
+    },
+    { "name": "Wild Berry", 
+        "description": "Açaí shop", 
+        "website": "https://www.wildberryacai.com/",
+        "location": { "lat": 36.148047, "lng": -86.808296 },
+        "hours": { 
+            "mon": [{ "open": "08:00", "close": "19:00" }],
+            "tue": [{ "open": "08:00", "close": "19:00" }],
+            "wed": [{ "open": "08:00", "close": "19:00" }],
+            "thu": [{ "open": "08:00", "close": "19:00" }],
+            "fri": [{ "open": "08:00", "close": "19:00" }],
+            "sat": [{ "open": "09:00", "close": "19:00" }],
+            "sun": [{ "open": "09:00", "close": "19:00" }]
+        }
+    },
+    { "name": "I Love Sushi", 
+        "description": "Sushi restaurant", 
+        "website": "https://ilovesushinashville.com/",
+        "location": { "lat": 36.150066, "lng": -86.805606 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "14:15" }, { "open": "16:30", "close": "21:15" }],
+            "tue": [{ "open": "11:00", "close": "14:15" }, { "open": "16:30", "close": "21:15" }],
+            "wed": [{ "open": "11:00", "close": "14:15" }, { "open": "16:30", "close": "21:15" }],
+            "thu": [{ "open": "11:00", "close": "14:15" }, { "open": "16:30", "close": "21:15" }],
+            "fri": [{ "open": "11:00", "close": "14:15" }, { "open": "16:30", "close": "22:15" }],
+            "sat": [{ "open": "11:30", "close": "14:15" }, { "open": "16:30", "close": "22:15" }],
+            "sun": [{ "open": "11:30", "close": "14:15" }, { "open": "16:30", "close": "21:15" }]
+        }
+    },
+    { "name": "Roma Pizza & Pasta", 
+        "description": "Pizza restaurant", 
+        "website": "https://romapizzaandpasta.com/locations/",
+        "location": { "lat": 36.148152, "lng": -86.808079 },
+        "hours": { 
+            "mon": [{ "open": "10:00", "close": "03:00" }],
+            "tue": [{ "open": "10:00", "close": "03:00" }],
+            "wed": [{ "open": "10:00", "close": "03:00" }],
+            "thu": [{ "open": "10:00", "close": "03:00" }],
+            "fri": [{ "open": "10:00", "close": "04:00" }],
+            "sat": [{ "open": "10:00", "close": "04:00" }],
+            "sun": [{ "open": "10:00", "close": "03:00" }]
+        }
+    },
+    { "name": "Jet's Pizza", 
+        "description": "Pizza restaurant", 
+        "website": "https://www.jetspizza.com/",
+        "location": { "lat": 36.148525, "lng": -86.809208 },
+        "hours": { 
+            "mon": [{ "open": "10:00", "close": "22:00" }],
+            "tue": [{ "open": "10:00", "close": "22:00" }],
+            "wed": [{ "open": "10:00", "close": "22:00" }],
+            "thu": [{ "open": "10:00", "close": "22:00" }],
+            "fri": [{ "open": "10:00", "close": "23:00" }],
+            "sat": [{ "open": "10:00", "close": "23:00" }],
+            "sun": [{ "open": "11:00", "close": "22:00" }]
+        }
+    },
+    { "name": "Oscar's Taco Shop", 
+        "description": "Meixcan restaurant", 
+        "website": "https://oscarstacoshop.com/",
+        "location": { "lat": 36.149041, "lng": -86.806316 },
+        "hours": { 
+            "mon": [{ "open": "08:00", "close": "21:00" }],
+            "tue": [{ "open": "08:00", "close": "21:00" }],
+            "wed": [{ "open": "08:00", "close": "21:00" }],
+            "thu": [{ "open": "08:00", "close": "21:00" }],
+            "fri": [{ "open": "08:00", "close": "21:00" }],
+            "sat": [{ "open": "08:00", "close": "21:00" }],
+            "sun": []
+        }
+    },
+    { "name": "Poke Bros.", 
+        "description": "Poké bar", 
+        "website": "https://eatpokebros.com/",
+        "location": { "lat": 36.148199, "lng": -86.808000 },
+        "hours": { 
+            "mon": [{ "open": "11:00", "close": "21:00" }],
+            "tue": [{ "open": "11:00", "close": "21:00" }],
+            "wed": [{ "open": "11:00", "close": "21:00" }],
+            "thu": [{ "open": "11:00", "close": "21:00" }],
+            "fri": [{ "open": "11:00", "close": "21:00" }],
+            "sat": [{ "open": "11:00", "close": "21:00" }],
+            "sun": [{ "open": "11:00", "close": "21:00" }]
+        }
+    },
+    { "name": "Thai Satay", 
+        "description": "Thai restaurant", 
+        "website": "https://www.thaisataynashville.com/",
+        "location": { "lat": 36.148185, "lng": -86.807939 },
+        "hours": { 
+            "mon": [],
+            "tue": [{ "open": "11:00", "close": "15:00" }, { "open": "16:00", "close": "21:00" }],
+            "wed": [{ "open": "11:00", "close": "15:00" }, { "open": "16:00", "close": "21:00" }],
+            "thu": [{ "open": "11:00", "close": "15:00" }, { "open": "16:00", "close": "21:00" }],
+            "fri": [{ "open": "11:00", "close": "15:00" }, { "open": "16:00", "close": "21:00" }],
+            "sat": [{ "open": "12:00", "close": "15:00" }, { "open": "16:00", "close": "21:00" }],
+            "sun": [{ "open": "12:00", "close": "15:00" }, { "open": "16:00", "close": "21:00" }]
+        }
+    },
+    { "name": "Sweet Dots", 
+        "description": "Bubble tea store", 
+        "website": "https://www.sweetdots.com/",
+        "location": { "lat": 36.151323, "lng": -86.804154 },
+        "hours": { 
+            "mon": [{ "open": "07:00", "close": "21:00" }],
+            "tue": [{ "open": "07:00", "close": "21:00" }],
+            "wed": [{ "open": "07:00", "close": "21:00" }],
+            "thu": [{ "open": "07:00", "close": "21:00" }],
+            "fri": [{ "open": "07:00", "close": "22:00" }],
+            "sat": [{ "open": "07:00", "close": "22:00" }],
+            "sun": [{ "open": "07:00", "close": "21:00" }]
+        }
+    },
+    { "name": "Red Bicycle", 
+        "description": "Coffee shop", 
+        "website": "https://redbicyclecoffee.com/",
+        "location": { "lat": 36.142677, "lng": -86.797851 },
+        "hours": { 
+            "mon": [{ "open": "07:30", "close": "17:00" }],
+            "tue": [{ "open": "07:30", "close": "17:00" }],
+            "wed": [{ "open": "07:30", "close": "17:00" }],
+            "thu": [{ "open": "07:30", "close": "17:00" }],
+            "fri": [{ "open": "07:30", "close": "17:00" }],
+            "sat": [],
+            "sun": []
+        }
+    },
+    { "name": "Woodlands", 
+        "description": "Indian restaurant", 
+        "website": "https://woodlandstennessee.com/",
+        "location": { "lat": 36.138112, "lng": -86.819966 },
+        "hours": { 
+            "mon": [{ "open": "10:45", "close": "14:30" }, { "open": "16:45", "close": "21:30" }],
+            "tue": [{ "open": "10:45", "close": "14:30" }, { "open": "16:45", "close": "21:30" }],
+            "wed": [{ "open": "10:45", "close": "14:30" }, { "open": "16:45", "close": "21:30" }],
+            "thu": [{ "open": "10:45", "close": "14:30" }, { "open": "16:45", "close": "21:30" }],
+            "fri": [{ "open": "10:45", "close": "14:30" }, { "open": "16:45", "close": "21:30" }],
+            "sat": [{ "open": "10:45", "close": "14:30" }, { "open": "16:45", "close": "21:30" }],
+            "sun": [{ "open": "10:45", "close": "14:30" }, { "open": "16:45", "close": "21:30" }]
+        }
+    }
+]
