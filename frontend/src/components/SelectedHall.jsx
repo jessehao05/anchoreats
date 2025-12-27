@@ -2,7 +2,7 @@ import React from 'react'
 
 const SelectedHall = ({selected}) => {
   return (
-    <div className="selected mb-20 pt-12 text-center px-12">
+    <div className="selected mb-10 pt-12 text-center px-12">
         <div className="name font-bold">{selected.name}</div>
         <div className="times">
             <div className="mt-2">
