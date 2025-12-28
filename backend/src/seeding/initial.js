@@ -1,6 +1,6 @@
 import Restaurant from "../models/Restaurant.js";
 import mongoose from "mongoose";
-import initialData from "./initial-data.json" assert { type: "json" };
+import initialData from "../../../datalog/initial-data.json" assert { type: "json" };
 import dotenv from "dotenv";
 
 dotenv.config();
