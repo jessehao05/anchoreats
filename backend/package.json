@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
-    "seed": "node src/database-loading/initial.js"
+    "seed": "node src/database-loading/initial.js",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
   },
   "type": "module",
   "keywords": [],
@@ -19,6 +22,10 @@
     "mongoose": "^8.17.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@vitest/ui": "^4.0.16",
+    "mongodb-memory-server": "^11.0.1",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4",
+    "vitest": "^4.0.16"
   }
 }
