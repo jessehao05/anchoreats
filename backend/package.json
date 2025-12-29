@@ -8,7 +8,8 @@
     "seed": "node src/database-loading/initial.js",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "test:coverage": "vitest --coverage"
+    "test:coverage": "vitest --coverage",
+    "test:ci": "vitest run"
   },
   "type": "module",
   "keywords": [],
