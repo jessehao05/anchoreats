@@ -4,6 +4,7 @@ import { api } from "../lib/axios";
 import toast from "react-hot-toast";
 import Map from "../components/Map";
 import Menu from "../components/Menu";
+import { Hourglass } from "lucide-react";
 import { data } from "react-router";
 
 const ToNMapPage = () => {
@@ -12,6 +13,7 @@ const ToNMapPage = () => {
   const [filteredRestData, setFilteredRestData] = useState([]);
   const [location, setLocation] = useState({lat: 0, lng: 0});
   const [selected, setSelected] = useState([]);
+  const [locationBlocked, setLocationBlocked] = useState(false);
   const [isRateLimited, setIsRateLimited] = useState(false);
 
   useEffect(() => {
@@ -24,6 +26,7 @@ const ToNMapPage = () => {
           console.log("Geolocation failed, using default location:", geoError);
           userLocation = { lat: 36.144618, lng: -86.802501 };
           toast.error("WARNING: Location permissions have been denied, so distances may be inaccurate.");
+          setLocationBlocked(true);
         }
 
         setLocation(userLocation);
@@ -181,8 +184,17 @@ const ToNMapPage = () => {
 
         {/* {isRateLimited && <RateLimitedUI />} */}
 
+        {locationBlocked && 
+          <div className="mt-4 px-4 md:p-4 text-center text-xs md:text-sm">
+            <span className="text-red-700 font-medium">Warning:</span> Location permissions have been denied, so distances may be inaccurate.
+          </div>
+        }
+
         <div className="max-w-7xl mx-auto mt-6">
-          {isLoading && <div className="text-center text-primary-content py-10">Loading restaurant data...</div>}
+          {isLoading && <div className="flex flex-col items-center py-10">
+            <div className="text-primary-content">Loading restaurant data...</div>
+            <Hourglass className="mt-4" />
+          </div>}
 
           {restData.length > 0 && (
             <div className="flex flex-col lg:flex-row gap-6 p-4 lg:p-6">
