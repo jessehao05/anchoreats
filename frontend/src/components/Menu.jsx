@@ -9,7 +9,8 @@ const Menu = ({ onSearch, displayedData, handleClick, handleClosest }) => {
   console.log(displayedData) 
 
   return (
-    <div className="h-[600px] w-72 border-2 border-black p-4 overflow-auto flex flex-col gap-1">
+    <div className="h-[50vh] lg:h-[600px] w-full lg:w-72 mx-auto border-2 border-gray-200 rounded-lg overflow-hidden">
+      <div className="h-full p-4 overflow-auto flex flex-col gap-1">
         {searching && <SearchBar onSearch={onSearch}/>}
 
         {searching && displayedData.map((rest, idx) => {
@@ -19,6 +20,7 @@ const Menu = ({ onSearch, displayedData, handleClick, handleClosest }) => {
         })}
 
         <FindClosestBtn handleClosest={handleClosest}/>
+      </div>
     </div>
   )
 }

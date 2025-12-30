@@ -109,9 +109,11 @@ const SwipesForm = () => {
 
 
     return (
-        <div className="flex flex-wrap justify-center items-center gap-24">
+        <div className="flex flex-col justify-center items-center gap-4">
 
-            <form action="" className="flex flex-col gap-4 mt-10" onSubmit={(e) => handleSubmit(e)}>
+            {submitted && <SwipesResults meals={finalMeals} days={finalDays}/>}
+
+            <form action="" className="flex flex-col gap-4 my-10" onSubmit={(e) => handleSubmit(e)}>
                 
                 <label className="form-control w-full max-w-xs">
                     <div className="label">
@@ -198,8 +200,6 @@ const SwipesForm = () => {
                 </div>
                
             </form>
-
-            {submitted && <SwipesResults meals={finalMeals} days={finalDays}/>}
             
         </div>
   )

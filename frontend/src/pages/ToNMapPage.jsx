@@ -162,11 +162,11 @@ const ToNMapPage = () => {
           {isLoading && <div className="text-center text-primary-content py-10">Loading restaurant data...</div>}
 
           {restData.length > 0 && (
-            <div className="p-6 flex justify-center gap-12 flex-wrap">
-              <div className="h-[600px] w-2/3">
+            <div className="flex flex-col lg:flex-row gap-6 p-4 lg:p-6">
+              <div className="w-full h-[50vh] lg:h-[600px] lg:w-2/3">
                 <Map restaurants={restData} location={location} selected={selected} handleRestClick={handleBarClick}/>
               </div>
-              <div className="">
+              <div className="w-full lg:w-1/3 overflow-auto">
                 <Menu handleClick={handleBarClick} handleClosest={calculateClosest} onSearch={handleSearch} displayedData={filteredRestData} />
               </div>
             </div>

@@ -46,7 +46,7 @@ const Map = ( {restaurants, location, selected = "", handleRestClick} ) => {
 
 
   return (
-    <div className="h-full">
+    <div className="h-full border-2 border-black">
 
         <MapContainer className="h-full z-0" center={[36.144523, -86.802633]} zoom={14} scrollWheelZoom={false}>
             <TileLayer
