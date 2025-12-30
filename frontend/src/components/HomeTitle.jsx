@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import HomeButton from "./HomeButton"
 
 const HomeTitle = () => {
@@ -15,6 +16,10 @@ const HomeTitle = () => {
                 <HomeButton text="Dining Times" destination="/dining" />
                 <HomeButton text="Taste of Nashville Map" destination="/map" />
             </div>
+
+            <Link to="/submit" className="btn btn-secondary mt-12 scale-75 lg:scale-100">
+              Submit Feedback
+            </Link>
             
         </div>
     </div>
