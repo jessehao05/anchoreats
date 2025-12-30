@@ -17,7 +17,15 @@ const ToNMapPage = () => {
   useEffect(() => {
     const fetchRestData = async () => {
       try {
-        const userLocation = await getLocation();
+        let userLocation;
+        try {
+          userLocation = await getLocation();
+        } catch (geoError) {
+          console.log("Geolocation failed, using default location:", geoError);
+          userLocation = { lat: 36.144618, lng: -86.802501 };
+          toast.error("WARNING: Location permissions have been denied, so distances may be inaccurate.");
+        }
+
         setLocation(userLocation);
         console.log(`current location: ${userLocation.lat}, ${userLocation.lng}`)
 
