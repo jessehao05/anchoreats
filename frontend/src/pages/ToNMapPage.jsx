@@ -47,14 +47,29 @@ const ToNMapPage = () => {
     const getLocation = async () => {
       return new Promise((resolve, reject) => {
         if ("geolocation" in navigator) {
+          console.log("Requesting geolocation permission...");
           navigator.geolocation.getCurrentPosition(
             (position) => {
               const locationData = {lat: position.coords.latitude, lng: position.coords.longitude};
-              console.log(position.coords.latitude, position.coords.longitude)
+              console.log("Geolocation success:", position.coords.latitude, position.coords.longitude)
               resolve(locationData);
               // set location loading to false
             },
-            (error) => reject(error)
+            (error) => {
+              console.log("Geolocation error details:", {
+                code: error.code,
+                message: error.message,
+                PERMISSION_DENIED: error.code === 1,
+                POSITION_UNAVAILABLE: error.code === 2,
+                TIMEOUT: error.code === 3
+              });
+              reject(error);
+            },
+            {
+              enableHighAccuracy: false,
+              timeout: 10000,
+              maximumAge: 0
+            }
           );
         } else {
           reject(new Error("Geolocation not supported by browser."));
