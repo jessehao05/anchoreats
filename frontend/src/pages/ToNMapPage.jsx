@@ -34,7 +34,7 @@ const ToNMapPage = () => {
       } catch (error) {
         console.log(error);
 
-        if (error.response.status == 429) {
+        if (error.response && error.response.status == 429) {
           setIsRateLimited(true);
         } else {
           toast.error("Failed to load restaurant data");
