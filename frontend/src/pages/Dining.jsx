@@ -41,10 +41,12 @@ const Dining = () => {
             <SelectedHall selected={selected} />
           )} 
 
-          <div className="text-center my-10 text-sm">
+          <div className="text-center my-10 px-5 text-sm">
             <div className="font-semibold mb-2">Disclaimer:</div>
             <p>These times might not be accurate during holidays or breaks. </p>
             <p>Check the <a className="text-blue-500 underline" href="https://www.vanderbilt.edu/dining/special-hours/" target="_blank">Special Hours page</a> to find official times.</p>
+
+            <p className="mt-5">All dining times come from the <a className="text-blue-500 underline" href="https://netnutrition.cbord.com/nn-prod/vucampusdining" target="_blank">official Vanderbilt dining page</a>.</p>
           </div>
 
       </div>
