@@ -5,3 +5,6 @@
 /frontend/.env.local
 /frontend/.env.production
 /frontend/dist
+
+docs/E2E.md
+docs/TECH.md
