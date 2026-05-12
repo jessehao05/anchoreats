@@ -7,6 +7,8 @@ A full-stack web application that provides helpful dining features for Vanderbil
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Setup](#setup)
 - [API Endpoints](#api-endpoints)
 - [Design](#design)
 - [Deployment](#deployment)
@@ -74,6 +76,39 @@ anchor-eats/
 └── README.md
 ```
 
+## Prerequisites
+
+- **Node.js** — download from [nodejs.org](https://nodejs.org) (LTS version recommended)
+- **A MongoDB database** — create a free cluster at [MongoDB Atlas](https://cloud.mongodb.com) and grab the connection string
+
+## Setup
+
+1. Install dependencies in both directories:
+
+   ```bash
+   cd backend && npm install
+   cd frontend && npm install
+   ```
+
+2. Create a `.env` file in `backend/`:
+
+   ```
+   MONGO_URI=your_mongodb_connection_string
+   PORT=5001
+   ```
+
+3. Start the backend and frontend in separate terminals:
+
+   ```bash
+   # Terminal 1
+   cd backend
+   npm run dev
+
+   # Terminal 2
+   cd frontend
+   npm run dev
+   ```
+
 ## API Endpoints
 
 All API endpoints are prefixed with `/api`:
@@ -108,6 +143,70 @@ GET /api/data
     }
   }
 ]
+```
+
+### Feedback
+
+#### Get All Feedback
+
+```
+GET /api/feedback
+```
+
+**Description**: Retrieves all feedback entries, sorted by most recent first.
+
+**Response Example**:
+
+```json
+{
+  "success": true,
+  "message": "Feedback successfully fetched!",
+  "feedback": [
+    {
+      "_id": "...",
+      "text": "Great app!",
+      "author": "Jane Doe",
+      "email": "jane@example.com",
+      "createdAt": "2025-01-01T00:00:00.000Z"
+    }
+  ]
+}
+```
+
+#### Submit Feedback
+
+```
+POST /api/feedback
+```
+
+**Description**: Submits a new feedback entry.
+
+**Request Body**:
+
+```json
+{
+  "text": "Your feedback here",
+  "author": "Your Name",
+  "email": "your@email.com"
+}
+```
+
+> `text` is required. `author` and `email` are optional.
+
+**Response Example**:
+
+```json
+{
+  "success": true,
+  "message": "Feedback added successfully!",
+  "feedback": {
+    "_id": "...",
+    "text": "Your feedback here",
+    "author": "Your Name",
+    "email": "your@email.com",
+    "createdAt": "2025-01-01T00:00:00.000Z"
+  }
+}
 ```
 
 ## Design
