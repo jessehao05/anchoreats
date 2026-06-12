@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router"
-import { Menu, X, MessageSquareMore } from "lucide-react"
+import { Menu, X, MessageSquareMore, Smartphone } from "lucide-react"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = () => {
                 Taste of Nashville Map
             </Link>
             <Link to="/setup" className="text-black hover:text-gray-600">
-                Setup Instructions
+                <Smartphone strokeWidth={1.5}/>
             </Link>
             <Link to="/submit" className="text-black hover:text-gray-600">
               <MessageSquareMore strokeWidth={1.5}/>
@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
           <Link to="/setup" className="px-4 py-2 text-black hover:bg-gray-100"
             onClick={() => setIsOpen(false)}>
-            Setup Instructions
+            <Smartphone strokeWidth={1.5}/>
           </Link>
           <Link to="/submit" className="px-4 py-2 text-black hover:bg-gray-100">
             <MessageSquareMore strokeWidth={1.5}/>
