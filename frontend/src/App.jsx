@@ -5,6 +5,7 @@ import ToNMapPage from "./pages/ToNMapPage"
 import Dining from "./pages/Dining"
 import SubmitFeedback from "./pages/SubmitFeedback"
 import Feedback from "./pages/Feedback"
+import SetupInstructions from "./pages/SetupInstructions"
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/dining" element={<Dining />} />
         <Route path="/submit" element={<SubmitFeedback />} />
         <Route path="/feedback" element={<Feedback />} />
+        <Route path="/setup" element={<SetupInstructions />} />
       </Routes>
 
 

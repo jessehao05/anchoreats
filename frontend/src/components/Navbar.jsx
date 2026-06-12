@@ -20,6 +20,9 @@ const Navbar = () => {
             <Link to="/map" className="text-black hover:text-gray-600">
                 Taste of Nashville Map
             </Link>
+            <Link to="/setup" className="text-black hover:text-gray-600">
+                Setup Instructions
+            </Link>
             <Link to="/submit" className="text-black hover:text-gray-600">
               <MessageSquareMore strokeWidth={1.5}/>
             </Link>
@@ -44,6 +47,10 @@ const Navbar = () => {
           <Link to="/map" className="px-4 py-2 text-black hover:bg-gray-100"
             onClick={() => setIsOpen(false)}>
             Taste of Nashville Map
+          </Link>
+          <Link to="/setup" className="px-4 py-2 text-black hover:bg-gray-100"
+            onClick={() => setIsOpen(false)}>
+            Setup Instructions
           </Link>
           <Link to="/submit" className="px-4 py-2 text-black hover:bg-gray-100">
             <MessageSquareMore strokeWidth={1.5}/>

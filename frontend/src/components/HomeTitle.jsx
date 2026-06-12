@@ -20,6 +20,9 @@ const HomeTitle = () => {
             <Link to="/submit" className="btn btn-secondary mt-12 scale-75 lg:scale-100">
               Submit Feedback
             </Link>
+            <Link to="/setup" className="block mt-4 text-sm text-gray-500 hover:text-gray-800 underline scale-75 lg:scale-100">
+              Setup Instructions
+            </Link>
             
         </div>
     </div>
