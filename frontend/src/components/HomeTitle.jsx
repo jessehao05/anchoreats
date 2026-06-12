@@ -17,9 +17,14 @@ const HomeTitle = () => {
                 <HomeButton text="Taste of Nashville Map" destination="/map" />
             </div>
 
-            <Link to="/submit" className="btn btn-secondary mt-12 scale-75 lg:scale-100">
-              Submit Feedback
-            </Link>
+            <div className="flex justify-center items-center gap-8 mt-12 scale-75 lg:scale-100">
+              <Link to="/submit" className="text-sm text-gray-500 hover:text-gray-800 underline">
+                Submit Feedback
+              </Link>
+              <Link to="/setup" className="text-sm text-gray-500 hover:text-gray-800 underline">
+                Setup Instructions
+              </Link>
+            </div>
             
         </div>
     </div>
