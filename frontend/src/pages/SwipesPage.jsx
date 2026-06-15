@@ -19,11 +19,13 @@ import SwipesForm from "../components/SwipesForm"
 
 const SwipesPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="flex flex-col min-h-screen">
         <Navbar/>
 
-        <SwipesForm />
-      
+        <div className="flex flex-1 items-center justify-center pt-6 md:pt-0">
+            <SwipesForm />
+        </div>
+
     </div>
   )
 }
