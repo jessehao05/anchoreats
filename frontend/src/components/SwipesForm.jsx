@@ -11,6 +11,7 @@ const SwipesForm = () => {
     const [thanksgiving, setThanksgiving] = useState(false);
     const [springBreak, setSpringBreak] = useState(false);
     const [farmers, setFarmers] = useState("");
+    const [vandycart, setVandycart] = useState("");
     const [submitted, setSubmitted] = useState(false);
 
     const [finalMeals, setFinalMeals] = useState(0);
@@ -84,7 +85,10 @@ const SwipesForm = () => {
         // console.log('days initial', days)
         days = removeBreakDays(fallBreak, thanksgiving, springBreak, days);
         // console.log('days after breaks', days)
+        const weeksRemaining = Math.ceil(days / 7);
+        const vandycartSwipes = vandycart === '' ? 0 : parseInt(vandycart);
         meals = removeFarmers(meals, farmerSwipes);
+        meals -= vandycartSwipes * weeksRemaining;
         // console.log('days final', days)
         // console.log('meals: ', meals)
 
@@ -103,17 +107,18 @@ const SwipesForm = () => {
         setThanksgiving(false);
         setSpringBreak(false);
         setFarmers('');
+        setVandycart('');
         setSubmitted(false);
     }
 
 
 
     return (
-        <div className="flex flex-col justify-center items-center gap-4">
+        <div className="flex flex-col justify-center items-center gap-2">
 
             {submitted && <SwipesResults meals={finalMeals} days={finalDays}/>}
 
-            <form action="" className="flex flex-col gap-4 my-10" onSubmit={(e) => handleSubmit(e)}>
+            <form action="" className="flex flex-col gap-3 my-4" onSubmit={(e) => handleSubmit(e)}>
                 
                 <label className="form-control w-full max-w-xs">
                     <div className="label">
@@ -159,7 +164,7 @@ const SwipesForm = () => {
                     <label className="label justify-normal gap-2 cursor-pointer">
                         <input 
                             type="checkbox" 
-                            className="checkbox rounded-lg" 
+                            className="checkbox checkbox-sm rounded-lg" 
                             onChange={(e) => setFallBreak(e.target.checked)}
                         />
                         <span className="label-text">Fall Break</span>
@@ -167,7 +172,7 @@ const SwipesForm = () => {
                     <label className="label justify-normal gap-2 cursor-pointer">
                         <input 
                             type="checkbox" 
-                            className="checkbox rounded-lg" 
+                            className="checkbox checkbox-sm rounded-lg" 
                             onChange={(e) => setThanksgiving(e.target.checked)}
                         />
                         <span className="label-text">Thanksgiving Break</span>
@@ -175,7 +180,7 @@ const SwipesForm = () => {
                     <label className="label justify-normal gap-2 cursor-pointer">
                         <input 
                             type="checkbox" 
-                            className="checkbox rounded-lg" 
+                            className="checkbox checkbox-sm rounded-lg" 
                             onChange={(e) => setSpringBreak(e.target.checked)}
                         />
                         <span className="label-text">Spring Break</span>
@@ -186,17 +191,31 @@ const SwipesForm = () => {
                     <div className="label">
                         <span className="label-text">Estimated swipes for Farmers' Market:</span>
                     </div>
-                    <input 
-                        type="number" 
-                        placeholder="Ex. 4" 
+                    <input
+                        type="number"
+                        placeholder="Ex. 4"
                         className="input input-bordered w-full max-w-xs rounded-md"
+                        value={farmers}
                         onChange={(e) => setFarmers(e.target.value)}
                     />
                 </label>
 
-                <div className="flex gap-2 justify-end mt-4">
-                    <button type="reset" className="btn btn-secondary w-20 rounded-lg"onClick={handleReset}>Clear</button>
-                    <button type="submit" className="btn btn-primary w-20 rounded-lg">Submit</button>
+                <label className="form-control w-full max-w-xs">
+                    <div className="label">
+                        <span className="label-text">Weekly VandyCart swipes:</span>
+                    </div>
+                    <input
+                        type="number"
+                        placeholder="Ex. 2"
+                        className="input input-bordered w-full max-w-xs rounded-md"
+                        value={vandycart}
+                        onChange={(e) => setVandycart(e.target.value)}
+                    />
+                </label>
+
+                <div className="flex gap-2 justify-end mt-2">
+                    <button type="reset" className="btn btn-secondary btn-sm w-20 rounded-lg"onClick={handleReset}>Clear</button>
+                    <button type="submit" className="btn btn-primary btn-sm w-20 rounded-lg">Submit</button>
                 </div>
                
             </form>
