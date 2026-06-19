@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router"
+import { useEffect } from "react"
+import { Route, Routes, useLocation } from "react-router"
 import HomePage from "./pages/HomePage"
 import SwipesPage from "./pages/SwipesPage"
 import ToNMapPage from "./pages/ToNMapPage"
@@ -6,8 +7,16 @@ import Dining from "./pages/Dining"
 import SubmitFeedback from "./pages/SubmitFeedback"
 import Feedback from "./pages/Feedback"
 import SetupInstructions from "./pages/SetupInstructions"
+import Analytics from "./pages/Analytics"
+import { logPageView } from "./lib/analytics"
 
 const App = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    logPageView(location.pathname);
+  }, [location.pathname]);
+
   return (
     <div className="">
 
@@ -19,6 +28,7 @@ const App = () => {
         <Route path="/submit" element={<SubmitFeedback />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/setup" element={<SetupInstructions />} />
+        <Route path="/analytics" element={<Analytics />} />
       </Routes>
 
 

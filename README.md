@@ -10,6 +10,7 @@ A full-stack web application that provides helpful dining features for Vanderbil
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [API Endpoints](#api-endpoints)
+- [Testing](#testing)
 - [Design](#design)
 - [Deployment](#deployment)
 
@@ -208,6 +209,42 @@ POST /api/feedback
   }
 }
 ```
+
+## Testing
+
+Tests are written for the backend using [Vitest](https://vitest.dev/) and [Supertest](https://github.com/ladjs/supertest). Each test suite runs against an in-memory MongoDB instance (via `mongodb-memory-server`), so no real database connection is needed.
+
+### Test Suites
+
+| File | What it covers |
+|---|---|
+| `tests/Restaurant.test.js` | Restaurant model validation |
+| `tests/Feedback.test.js` | Feedback model validation |
+| `tests/restaurantRoutes.test.js` | `GET /api/data` |
+| `tests/feedbackRoutes.test.js` | `GET /api/feedback`, `POST /api/feedback` |
+| `tests/analyticsRoutes.test.js` | `POST /api/analytics/auth`, `GET /api/analytics`, `POST /api/analytics` |
+
+### Running Tests
+
+All commands should be run from the `backend/` directory.
+
+```bash
+# Run tests once
+npm run test:ci
+
+# Run tests in watch mode
+npm run test
+
+# Open the Vitest UI
+npm run test:ui
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### CI
+
+Tests run automatically on every push and pull request to `main` via GitHub Actions.
 
 ## Design
 
