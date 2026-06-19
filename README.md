@@ -10,6 +10,7 @@ A full-stack web application that provides helpful dining features for Vanderbil
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
 - [API Endpoints](#api-endpoints)
+- [Environment Variables](#environment-variables)
 - [Testing](#testing)
 - [Design](#design)
 - [Deployment](#deployment)
@@ -91,12 +92,7 @@ anchor-eats/
    cd frontend && npm install
    ```
 
-2. Create a `.env` file in `backend/`:
-
-   ```
-   MONGO_URI=your_mongodb_connection_string
-   PORT=5001
-   ```
+2. Create a `.env` file in `backend/` with the required variables (see [Environment Variables](#environment-variables)).
 
 3. Start the backend and frontend in separate terminals:
 
@@ -210,6 +206,25 @@ POST /api/feedback
 }
 ```
 
+## Environment Variables
+
+### Backend (`backend/.env`)
+
+| Variable | Required locally | Description |
+|---|---|---|
+| `MONGO_URI` | Yes | MongoDB Atlas connection string |
+| `ANALYTICS_USERNAME` | Yes | Admin username for the analytics page |
+| `ANALYTICS_PASSWORD` | Yes | Admin password for the analytics page |
+| `ANALYTICS_SECRET` | Yes | Bearer token returned after a successful analytics login |
+| `FRONTEND_URL` | No | Allowed CORS origin — falls back to `http://localhost:5173` |
+| `PORT` | No | Server port — falls back to `5001` |
+
+### Frontend (`frontend/.env`)
+
+| Variable | Required locally | Description |
+|---|---|---|
+| `VITE_API_URL` | No | Backend base URL — falls back to `http://localhost:5001/api` |
+
 ## Testing
 
 Tests are written for the backend using [Vitest](https://vitest.dev/) and [Supertest](https://github.com/ladjs/supertest). Each test suite runs against an in-memory MongoDB instance (via `mongodb-memory-server`), so no real database connection is needed.
@@ -254,3 +269,21 @@ Figma design file: [View Design](https://www.figma.com/design/b6XmvN3zJ3Ygg13yXW
 
 - **Frontend**: Vercel
 - **Backend**: Render
+
+### Required Environment Variables for Deployment
+
+**Render (backend)** — set these in the Render dashboard under Environment:
+
+| Variable | Value |
+|---|---|
+| `MONGO_URI` | Your MongoDB Atlas connection string |
+| `FRONTEND_URL` | Your Vercel app URL (e.g. `https://your-app.vercel.app`) |
+| `ANALYTICS_USERNAME` | Your chosen admin username |
+| `ANALYTICS_PASSWORD` | Your chosen admin password |
+| `ANALYTICS_SECRET` | A long random string used as a bearer token |
+
+**Vercel (frontend)** — set these in the Vercel dashboard under Settings → Environment Variables:
+
+| Variable | Value |
+|---|---|
+| `VITE_API_URL` | Your Render backend URL + `/api` (e.g. `https://your-app.onrender.com/api`) |
