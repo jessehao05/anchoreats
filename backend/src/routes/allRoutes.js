@@ -1,12 +1,12 @@
 import express from "express";
-import { getRestaurantData } from "../controllers/restaurantControllers.js";
-import { getAllFeedback, addFeedback } from "../controllers/feedbackControllers.js";
+import restaurantRoutes from "./restaurantRoutes.js";
+import feedbackRoutes from "./feedbackRoutes.js";
+import analyticsRoutes from "./analyticsRoutes.js";
 
 const router = express.Router();
 
-router.get("/data", getRestaurantData);
-router.get("/feedback", getAllFeedback);
-router.post("/feedback", addFeedback);
-
+router.use("/data", restaurantRoutes);
+router.use("/feedback", feedbackRoutes);
+router.use("/analytics", analyticsRoutes);
 
 export default router;
