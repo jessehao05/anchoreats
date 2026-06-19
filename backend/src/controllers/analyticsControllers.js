@@ -2,6 +2,17 @@ import PageView from "../models/PageView.js";
 
 const BOT_PATTERN = /bot|crawler|spider|crawling|slurp|yandex|baidu|duckduck|facebookexternalhit|ia_archiver/i;
 
+export const authenticate = (req, res) => {
+    const { username, password } = req.body;
+    if (
+        username === process.env.ANALYTICS_USERNAME &&
+        password === process.env.ANALYTICS_PASSWORD
+    ) {
+        return res.status(200).json({ success: true, token: process.env.ANALYTICS_SECRET });
+    }
+    res.status(401).json({ success: false, message: "Invalid credentials." });
+};
+
 export const logPageView = async (req, res) => {
     try {
         const userAgent = req.headers["user-agent"] || "";
@@ -26,6 +37,11 @@ export const logPageView = async (req, res) => {
 };
 
 export const getAnalytics = async (req, res) => {
+    const authHeader = req.headers["authorization"];
+    if (!authHeader || authHeader !== `Bearer ${process.env.ANALYTICS_SECRET}`) {
+        return res.status(401).json({ success: false, message: "Unauthorized." });
+    }
+
     try {
         const [totalViews, sessionIds, byPage, byDay, byMonth] = await Promise.all([
             PageView.countDocuments(),

@@ -1,17 +1,25 @@
 import express from "express";
 import rateLimit from "express-rate-limit";
-import { logPageView, getAnalytics } from "../controllers/analyticsControllers.js";
+import { authenticate, logPageView, getAnalytics } from "../controllers/analyticsControllers.js";
 
 const router = express.Router();
 
-const analyticsLimiter = rateLimit({
+const pageViewLimiter = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 30,
     standardHeaders: true,
     legacyHeaders: false,
 });
 
-router.post("/", analyticsLimiter, logPageView);
+const authLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 5,
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+
+router.post("/auth", authLimiter, authenticate);
+router.post("/", pageViewLimiter, logPageView);
 router.get("/", getAnalytics);
 
 export default router;

@@ -7,6 +7,7 @@ import Dining from "./pages/Dining"
 import SubmitFeedback from "./pages/SubmitFeedback"
 import Feedback from "./pages/Feedback"
 import SetupInstructions from "./pages/SetupInstructions"
+import Analytics from "./pages/Analytics"
 import { logPageView } from "./lib/analytics"
 
 const App = () => {
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/submit" element={<SubmitFeedback />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/setup" element={<SetupInstructions />} />
+        <Route path="/analytics" element={<Analytics />} />
       </Routes>
 
 
