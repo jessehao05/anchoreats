@@ -244,6 +244,7 @@ Figma design file: [View Design](https://www.figma.com/design/b6XmvN3zJ3Ygg13yXW
 | `ANALYTICS_USERNAME` | Your chosen admin username |
 | `ANALYTICS_PASSWORD` | Your chosen admin password |
 | `ANALYTICS_SECRET` | A long random string used as a bearer token |
+| `PORT` | Server port — falls back to `5001`. Don't need for Render. |
 | `NODE_ENV` | production |
 
 **Vercel (frontend)** — set these in the Vercel dashboard under Settings → Environment Variables:
