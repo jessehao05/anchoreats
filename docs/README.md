@@ -248,10 +248,10 @@ Figma design file: [View Design](https://www.figma.com/design/b6XmvN3zJ3Ygg13yXW
 
 ## Deployment
 
-The application is configured for deployment on Vercel:
+The application is configured for deployment on Vercel (frontend) and Render (backend):
 
 - **Frontend**: Automatic deployment from the `frontend/` directory
-- **Backend**: Serverless functions or separate backend hosting
+- **Backend**: Deployment from the `backend/` directory
 
 Recent commit mentions Vercel/render setup for deployment. Ensure environment variables are properly configured in your deployment platform.
 

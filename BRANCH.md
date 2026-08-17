@@ -19,7 +19,7 @@ name: legacy/working-3-buttons
 - /setup
 - /analytics
 - /swipes
-- /submit (results after /swipes)
+- /submit
 - /map
 - /dining
 - /feedback
