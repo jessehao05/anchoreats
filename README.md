@@ -217,7 +217,8 @@ POST /api/feedback
 | `ANALYTICS_PASSWORD` | Yes | Admin password for the analytics page |
 | `ANALYTICS_SECRET` | Yes | Bearer token returned after a successful analytics login |
 | `FRONTEND_URL` | No | Allowed CORS origin — falls back to `http://localhost:5173` |
-| `PORT` | No | Server port — falls back to `5001` |
+| `PORT` | No | Server port — falls back to `5001`. Don't need for Render. |
+| `NODE_ENV` | No | set to "production" |
 
 ### Frontend (`frontend/.env`)
 
