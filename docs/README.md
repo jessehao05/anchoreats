@@ -1,6 +1,6 @@
 # AnchorEats
 
-A full-stack web application that provides helpful dining features for Vanderbilt students, including a meal swipe calculator and an interactive Taste of Nashville restaurant map.
+A full-stack web application that provides helpful dining features for Vanderbilt students, centered on a meal swipe calculator.
 
 ## Table of Contents
 
@@ -12,7 +12,6 @@ A full-stack web application that provides helpful dining features for Vanderbil
 - [Running the Application Locally](#running-the-application-locally)
 - [API Endpoints](#api-endpoints)
 - [Environment Variables](#environment-variables)
-- [Database Seeding](#database-seeding)
 - [Design](#design)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
@@ -22,15 +21,13 @@ A full-stack web application that provides helpful dining features for Vanderbil
 AnchorEats was created to solve common challenges faced by Vanderbilt students:
 
 - **Meal Swipe Management**: Near the end of the semester, I was getting tired of calculating the number of days and doing the math to find out how many meal swipes I needed to use. I noticed several of my friends mentioned doing these calculations as well, so I wanted to make a tool to make doing the math faster.
-- **Restaurant Map**: As for the Taste of Nashville map, there were many times during the school year where I wanted to eat out instead of going to a dining hall, but I was unfamiliar with the eligible meal money restaurants. I wished that there was a tool or map that allowed me to see only Taste of Nashville restaurants and also showed the closest restaurants to my location.
 
 ## Features
 
 - **Meal Swipe Calculator**: Calculate how many swipes you need to use daily to reach zero by semester's end (accounting for breaks & Farmers' Market)
-- **Interactive Map**: Visual display of all Taste of Nashville restaurants with your current location
-- **Restaurant Search**: Search Taste of Nashville restaurants by name or description
-- **Proximity Search**: Find the 5 closest Taste of Nashville restaurants to your current location
-- **Dining Hall Info**: View Vanderbilt dining hall menus and hours
+- **Feedback**: Submit feedback and browse everything that has been submitted
+- **Setup Instructions**: Guide for installing the app to your home screen as a PWA
+- **Analytics**: Password-protected page view dashboard
 
 ## Tech Stack
 
@@ -57,7 +54,6 @@ anchor-eats/
 │   │   ├── controllers/
 │   │   ├── models/
 │   │   ├── routes/
-│   │   ├── seeding/
 │   │   └── server.js        # Express app entry point
 │   ├── .env
 │   └── package.json
@@ -126,16 +122,7 @@ Create a [.env](frontend/.env) file in the `frontend/` directory:
 VITE_API_URL=http://localhost:5001/api
 ```
 
-### Step 2: Seed the Database (Optional)
-
-If you need to populate the database with initial restaurant data:
-
-```bash
-cd backend
-npm run seed
-```
-
-### Step 3: Start the Backend Server
+### Step 2: Start the Backend Server
 
 From the `backend/` directory:
 
@@ -151,7 +138,7 @@ You should see:
 server up
 ```
 
-### Step 4: Start the Frontend Development Server
+### Step 3: Start the Frontend Development Server
 
 Open a new terminal window and navigate to the `frontend/` directory:
 
@@ -162,7 +149,7 @@ npm run dev
 
 The frontend will start on `http://localhost:5173`.
 
-### Step 5: Access the Application
+### Step 4: Access the Application
 
 Open your browser and navigate to:
 
@@ -174,42 +161,13 @@ http://localhost:5173
 
 All API endpoints are prefixed with `/api`:
 
-### Restaurants
+- `GET /api/feedback` — retrieve all feedback entries
+- `POST /api/feedback` — submit a new feedback entry
+- `POST /api/analytics` — log a page view
+- `POST /api/analytics/auth` — exchange admin credentials for a bearer token
+- `GET /api/analytics` — retrieve page view stats (requires bearer token)
 
-#### Get All Restaurant Data
-
-```
-GET /api/data
-```
-
-**Description**: Retrieves all Taste of Nashville restaurant information including name, description, location coordinates, hours, and website.
-
-**Response Example**:
-
-```json
-[
-  {
-    "_id": "...",
-    "name": "Restaurant Name",
-    "description": "Restaurant description",
-    "website": "https://example.com",
-    "location": {
-      "lat": 36.1234,
-      "lng": -86.5678
-    },
-    "hours": {
-      "mon": [{ "open": "11:00 AM", "close": "10:00 PM" }],
-      "tue": [{ "open": "11:00 AM", "close": "10:00 PM" }],
-      ...
-    }
-  }
-]
-```
-
-**Status Codes**:
-
-- `200 OK` - Successfully retrieved data
-- `500 Internal Server Error` - Database error
+See the [root README](../README.md#api-endpoints) for request and response details.
 
 ## Environment Variables
 
@@ -229,29 +187,16 @@ GET /api/data
 
 **Note**: Vite requires all environment variables exposed to the client to be prefixed with `VITE_`.
 
-## Database Seeding
-
-The project includes seeding scripts to populate the MongoDB database with initial data.
-
-**Run the seed script**:
-
-```bash
-cd backend
-npm run seed
-```
-
-The seeding data and scripts are located in [backend/src/seeding/](backend/src/seeding/).
-
 ## Design
 
 Figma design file: [View Design](https://www.figma.com/design/b6XmvN3zJ3Ygg13yXWLZWu/web-map?node-id=0-1&p=f)
 
 ## Deployment
 
-The application is configured for deployment on Vercel:
+The application is configured for deployment on Vercel (frontend) and Render (backend):
 
 - **Frontend**: Automatic deployment from the `frontend/` directory
-- **Backend**: Serverless functions or separate backend hosting
+- **Backend**: Deployment from `backend/` directory
 
 Recent commit mentions Vercel/render setup for deployment. Ensure environment variables are properly configured in your deployment platform.
 

@@ -13,8 +13,6 @@ const HomeTitle = () => {
             <div className="flex flex-col lg:flex-wrap lg:flex-row justify-center items-center 
             gap-1 lg:gap-4">
                 <HomeButton text="Meal Swipes Calculator" destination="/swipes" />
-                <HomeButton text="Dining Times" destination="/dining" />
-                <HomeButton text="Taste of Nashville Map" destination="/map" />
             </div>
 
             <div className="flex justify-center items-center gap-8 mt-12 scale-75 lg:scale-100">
