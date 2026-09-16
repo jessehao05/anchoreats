@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar"
-import Map from "../components/Map"
 import SwipesForm from "../components/SwipesForm"
 
 // const testData = [

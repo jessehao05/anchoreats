@@ -1,6 +1,6 @@
 # AnchorEats
 
-A full-stack web application that provides helpful dining features for Vanderbilt students, including a meal swipe calculator and an interactive Taste of Nashville restaurant map.
+A full-stack web application that provides helpful dining features for Vanderbilt students, centered on a meal swipe calculator.
 
 ## Table of Contents
 
@@ -20,15 +20,13 @@ A full-stack web application that provides helpful dining features for Vanderbil
 AnchorEats was created to solve common challenges faced by Vanderbilt students:
 
 - **Meal Swipe Management**: Near the end of the semester, I was getting tired of calculating the number of days and doing the math to find out how many meal swipes I needed to use. I noticed several of my friends mentioned doing these calculations as well, so I wanted to make a tool to make doing the math faster.
-- **Restaurant Map**: As for the Taste of Nashville map, there were many times during the school year where I wanted to eat out instead of going to a dining hall, but I was unfamiliar with the eligible meal money restaurants. I wished that there was a tool or map that allowed me to see only Taste of Nashville restaurants and also showed the closest restaurants to my location.
 
 ## Features
 
 - **Meal Swipe Calculator**: Calculate how many swipes you need to use daily to reach zero by semester's end (accounting for breaks & Farmers' Market)
-- **Interactive Map**: Visual display of all Taste of Nashville restaurants with your current location
-- **Restaurant Search**: Search Taste of Nashville restaurants by name or description
-- **Proximity Search**: Find the 5 closest Taste of Nashville restaurants to your current location
-- **Dining Hall Info**: View Vanderbilt dining hall menus and hours
+- **Feedback**: Submit feedback and browse everything that has been submitted
+- **Setup Instructions**: Guide for installing the app to your home screen as a PWA
+- **Analytics**: Password-protected page view dashboard
 
 ## Tech Stack
 
@@ -55,7 +53,6 @@ anchor-eats/
 │   │   ├── controllers/
 │   │   ├── models/
 │   │   ├── routes/
-│   │   ├── seeding/
 │   │   └── server.js        # Express app entry point
 │   ├── .env
 │   └── package.json
@@ -109,38 +106,6 @@ anchor-eats/
 ## API Endpoints
 
 All API endpoints are prefixed with `/api`:
-
-### Restaurants
-
-#### Get All Restaurant Data
-
-```
-GET /api/data
-```
-
-**Description**: Retrieves all Taste of Nashville restaurant information including name, description, location coordinates, hours, and website.
-
-**Response Example**:
-
-```json
-[
-  {
-    "_id": "...",
-    "name": "Restaurant Name",
-    "description": "Restaurant description",
-    "website": "https://example.com",
-    "location": {
-      "lat": 36.1234,
-      "lng": -86.5678
-    },
-    "hours": {
-      "mon": [{ "open": "11:00 AM", "close": "10:00 PM" }],
-      "tue": [{ "open": "11:00 AM", "close": "10:00 PM" }],
-      ...
-    }
-  }
-]
-```
 
 ### Feedback
 
@@ -233,9 +198,7 @@ Tests are written for the backend using [Vitest](https://vitest.dev/) and [Super
 
 | File | What it covers |
 |---|---|
-| `tests/Restaurant.test.js` | Restaurant model validation |
 | `tests/Feedback.test.js` | Feedback model validation |
-| `tests/restaurantRoutes.test.js` | `GET /api/data` |
 | `tests/feedbackRoutes.test.js` | `GET /api/feedback`, `POST /api/feedback` |
 | `tests/analyticsRoutes.test.js` | `POST /api/analytics/auth`, `GET /api/analytics`, `POST /api/analytics` |
 
@@ -281,6 +244,8 @@ Figma design file: [View Design](https://www.figma.com/design/b6XmvN3zJ3Ygg13yXW
 | `ANALYTICS_USERNAME` | Your chosen admin username |
 | `ANALYTICS_PASSWORD` | Your chosen admin password |
 | `ANALYTICS_SECRET` | A long random string used as a bearer token |
+| `PORT` | Server port — falls back to `5001`. Don't need for Render. |
+| `NODE_ENV` | production |
 
 **Vercel (frontend)** — set these in the Vercel dashboard under Settings → Environment Variables:
 
